@@ -1,27 +1,102 @@
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const nextButton = document.querySelector('.carousel-button-right');
-const prevButton = document.querySelector('.carousel-button-left');
-let currentSlide = slides.findIndex(slide => slide.classList.contains('current-slide'));
+// script.js
 
-function updateSlidePosition() {
-    slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(${100 * (index - currentSlide)}%)`;
-        slide.classList.remove('current-slide');
-        slide.style.opacity = '0.5';
+document.addEventListener('DOMContentLoaded', function () {
+    //sm
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
-    slides[currentSlide].classList.add('current-slide');
-    slides[currentSlide].style.opacity = '1';
-}
 
-nextButton.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSlidePosition();
+    // Handle navigation link clicks
+    const menuLinks = document.querySelectorAll('.menu a');
+    
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetUrl = this.getAttribute('href');
+            window.location.href = targetUrl;
+        });
+    });
+
+    // Highlight the active link in the navigation
+    const currentPage = window.location.pathname.split("/").pop();
+    menuLinks.forEach(link => {
+        const linkPath = link.getAttribute('href').split("/").pop();
+        if (linkPath === currentPage || (currentPage === '' && linkPath === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+
+    // Dynamic content changing
+    const changeContent = document.querySelector('.change_content');
+    const contentList = [
+        "Amritsar: The Golden City In Punjab",
+        "Lucknow: The City Of The Nawabs",
+        "Delhi: A Potpourri Of Different Cultures",
+        "Rajasthan: The Land Of Rajputs",
+        "Kolkata: The City Of Joy",
+        "Mysore: The Palace City Of India",
+        "Rann of Kutch: The Land Of The White Desert",
+        "Hyderabad: The City Of Nizams",
+        "Kerala: God's Own Country",
+        "Hampi: Ancient Kingdom Of Vijaynagar",
+        "Pattadakal: A Group Of Monuments",
+        "Goa: Land Of Beaches And Churches",
+        "Chola Temples: Architectural Heritage Of Chola Empire"
+    ];
+
+    let index = 0;
+
+    function updateContent() {
+        changeContent.textContent = contentList[index];
+        index = (index + 1) % contentList.length;
+    }
+
+    // Update content every 5 seconds
+    setInterval(updateContent, 5000);
+
+    // Modal functionality for image previews
+    const images = document.querySelectorAll('.carousel-image');
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    document.body.appendChild(modal);
+
+    const modalImage = document.createElement('img');
+    modalImage.classList.add('modal-image');
+    modal.appendChild(modalImage);
+
+    images.forEach(image => {
+        image.addEventListener('click', function () {
+            modalImage.src = this.src;
+            modal.classList.add('open');
+        });
+    });
+
+    modal.addEventListener('click', function () {
+        modal.classList.remove('open');
+    });
 });
 
-prevButton.addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateSlidePosition();
+// Example of additional features
+
+// Smooth scroll back to top button
+const backToTopButton = document.createElement('button');
+backToTopButton.classList.add('back-to-top');
+backToTopButton.textContent = 'Back to Top';
+document.body.appendChild(backToTopButton);
+
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 200) {
+        backToTopButton.classList.add('visible');
+    } else {
+        backToTopButton.classList.remove('visible');
+    }
 });
 
-updateSlidePosition();
+backToTopButton.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
