@@ -7,6 +7,31 @@
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	  <!-- <style>
+		.embed-container {
+		  position: relative;
+		  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+		  height: 0;
+		  overflow: hidden;
+		  max-width: 100%;
+		  cursor: pointer; /* Add a pointer cursor to indicate clickability */
+		}
+	
+		.embed-container iframe {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 50%; /* Initial width */
+		  height: 50%; /* Initial height */
+		  transition: width 0.5s ease, height 0.5s ease;
+		}
+	
+		/* Fullscreen class */
+		.embed-container.fullscreen iframe {
+		  width: 100% !important;
+		  height: 100% !important;
+		}
+	  </style> -->
 </head>
 <body>
 <div class="herohead">
@@ -24,6 +49,7 @@
 		<a href="Heritage Sites/Index.html">Heritage</a>
 		<a href="#">About Us</a>
 	</div>
+	
 </nav>
 </header>
 	<div class="hero-section">
@@ -36,6 +62,85 @@
 	</div>
 
 </div>
+
+<div class="second-page">
+	<h1>Welcome to the Second Page</h1>
+	<p>This page has a background image.</p>
+</div>
+<div class="third-page">
+	<h1>Welcome to the Second Page</h1>
+	<p>This page has a background image.</p>
+</div>
+<div class="third-page">
+	<h1>Welcome to the Second Page</h1>
+	<p>This page has a background image.</p>
+</div>
+<!-- <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 50%; height: 50%; }</style><div class='embed-container'><iframe src=https://momento360.com/e/u/c7c120e181a34182ad59ee1cae5a80c1?utm_campaign=embed&utm_source=other&heading=1.4&pitch=25.93&field-of-view=82.08&size=medium&display-plan=true style='border:0'></iframe></div> -->
+<div class='embed-container'>
+    <iframe
+      id="myIframe"
+      src="https://momento360.com/e/u/c7c120e181a34182ad59ee1cae5a80c1?utm_campaign=embed&utm_source=other&heading=1.4&pitch=25.93&field-of-view=82.08&size=medium&display-plan=true"
+      style='border:0'>
+    </iframe>
+    <button class="expand-button" onclick="toggleFullscreen()">Expand</button>
+  </div>
+  <script>
+    function toggleFullscreen() {
+      const iframe = document.getElementById('myIframe');
+      const container = iframe.parentElement;
+
+      // Toggle fullscreen class
+      container.classList.toggle('fullscreen');
+    }
+  </script>
+  <footer style="background-color: #222; color: white; padding: 20px; font-family: Arial, sans-serif;">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <!-- Left Column -->
+        <div style="flex: 1; min-width: 250px; padding: 10px;">
+            <h3 style="color: #FFD700;">INDIAN CULTURE</h3>
+            <p>Discover, Learn, Immerse, Connect</p>
+            <p>Recognizing the ongoing need to position itself for the digital future, Indian Culture is an initiative by the Ministry of Culture. A platform that hosts data of cultural relevance from various repositories and institutions all over India.</p>
+        </div>
+        
+        <!-- Quick Links Column -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h4>Quick Links</h4>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;">Accessibility Statement</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Hyperlinking Policy</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Disclaimer</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">All MoC Organisations</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Terms and Conditions</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">ICP Download</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Site Map</a></li>
+            </ul>
+        </div>
+
+        <!-- Right Column -->
+        <div style="flex: 1; min-width: 250px; padding: 10px;">
+            <p>The Indian Culture Portal is a part of the National Virtual Library of India project, funded by the Ministry of Culture, Government of India. The portal has been created and developed by the Indian Institute of Technology, Bombay. Data has been provided by organizations of the Ministry of Culture.</p>
+            <p>Email Id: <a href="mailto:indian-culture@gov.in" style="color: white;">indian-culture@gov.in</a></p>
+        </div>
+    </div>
+
+    <!-- Social Media and Logos -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-top: 1px solid #444;">
+        <div style="display: flex; gap: 15px;">
+            <a href="#" style="color: white;"><img src="facebook-icon.png" alt="Facebook" style="width: 24px;"></a>
+            <a href="#" style="color: white;"><img src="instagram-icon.png" alt="Instagram" style="width: 24px;"></a>
+            <a href="#" style="color: white;"><img src="twitter-icon.png" alt="Twitter" style="width: 24px;"></a>
+        </div>
+        <div>
+            <img src="digital-india-logo.png" alt="Digital India" style="height: 40px;">
+            <img src="swachh-bharat-logo.png" alt="Swachh Bharat" style="height: 40px;">
+            <img src="mygov-logo.png" alt="My Gov" style="height: 40px;">
+            <img src="incredible-india-logo.png" alt="Incredible India" style="height: 40px;">
+        </div>
+    </div>
+</footer>
+
    <script src="script.js"></script>
+   
 </body>
 </html>

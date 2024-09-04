@@ -6,6 +6,57 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/*---------------------*/
+.herohead {
+    border: 10px solid #d3d3d3; /* Grayish border */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 2px solid #d3d3d3; /* Grayish border at the bottom of the header */
+}
+
+.logo img {
+    width: 80px; /* Adjust as necessary */
+}
+
+.menu a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #6a1b9a;
+}
+
+.hero-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hero-section h3 {
+    color: #333;
+    font-size: 24px;
+}
+
+.hero-section h1 {
+    color: #6a1b9a;
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+.hero-section p {
+    color: #555;
+    font-size: 20px;
+    margin-top: 20px;
+}
+/* --- ----- ---- - */
 /* Container for hero header with dynamic background */
 .herohead {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
@@ -183,3 +234,63 @@ footer {
     100% { background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)), url("https://assets.traveltriangle.com/blog/wp-content/uploads/2019/03/Chola-Temples.jpg"); }
 }
 
+
+.second-page {
+    background-image: url('image.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
+    min-height: 100vh; /* Ensures the section is at least the height of the viewport */
+    color: white; /* Optional: Changes the text color for better visibility */
+    padding: 20px;
+    opacity: 55%; /* Optional: Adds some padding */
+}
+.third-page {
+    background-image: url('image.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
+    min-height: 100vh; /* Ensures the section is at least the height of the viewport */
+    color: white; /* Optional: Changes the text color for better visibility */
+    padding: 20px;
+    opacity: 55%; /* Optional: Adds some padding */
+}
+
+
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    cursor: pointer; /* Add a pointer cursor to indicate clickability */
+  }
+
+  .embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Initial width */
+    height: 50%; /* Initial height */
+    transition: width 0.5s ease, height 0.5s ease;
+  }
+
+  .fullscreen {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Button style */
+  .expand-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+  } 
